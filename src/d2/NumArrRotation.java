@@ -11,6 +11,7 @@ public class NumArrRotation {
 		int T = Integer.parseInt(br.readLine());
 		
 		for(int tc =1; tc < T; tc++) {
+			st = new StringTokenizer(br.readLine());
 			int N = Integer.parseInt(br.readLine());
 			
 			
