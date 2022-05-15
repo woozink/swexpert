@@ -20,7 +20,7 @@ public class ZigzagNum {
 					sum -= i;
 				}
 			}
-			System.out.println(sum);
+			System.out.println("#" + tc  + " " +sum);
 		}
 	}
 }
