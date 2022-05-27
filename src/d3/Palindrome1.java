@@ -3,7 +3,9 @@ import java.io.*;
 import java.util.*;
 
 public class Palindrome1 {
-	private static char[][] arr = new char[8][8];
+	private static int ROW_SIZE = 8;
+	private static int COL_SIZE = 8;
+	private static char[][] arr = new char[ROW_SIZE][COL_SIZE];
 	
 	
 	public static void main(String[] args) throws IOException{
@@ -19,27 +21,35 @@ public class Palindrome1 {
 		}
 	}
 	
+	
 	private static int palindrome(int length, char[][] arr) {
 		int cnt = 0;
 		
-		for(int i = 0; i < 8; i++) {
-			for(int  j= 0; j < 8-length+1; j++) {
+		for(int i = 0; i < ROW_SIZE; i++) {
+			for(int  j= 0; j < COL_SIZE-length+1; j++) {
 				boolean check1 = true;
 				boolean check2 = true;
 				
-				for(int k =0; i < length/2; k++) {
-					if(arr[i][j+k] != arr[i][j+length-1-k]) {
-						check1 = false;
-					}
-					if(arr[j+k][i] != arr[j+length-1-k][i]) {
-						check2 = false;
-					}
+				String rowString = "";
+				String colString = "";
+				if(isPalindrome(rowString)) {
+					cnt++;
 				}
-				if(check1) cnt++;
-				if(check2) cnt++;
+				if(isPalindrome(colString)) {
+					cnt++;
+				}
 			}
 		}
 		
 		return cnt;
+	}
+	
+	private static boolean isPalindrome(String str) {
+		for(int i=0;i<str.length()/2;i++) {
+			if(str.charAt(i) != str.charAt(str.length()-1-i)) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
