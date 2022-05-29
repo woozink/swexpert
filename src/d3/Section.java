@@ -19,5 +19,6 @@ public class Section {
 			sb.append("#").append(t).append(" ").append(answer).append("\n");
 		}
 		System.out.println(sb);
+	System.out
 	}
 }
