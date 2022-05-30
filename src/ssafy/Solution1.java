@@ -27,10 +27,7 @@ public class Solution1 {
 			}
 
 			for (int i = 0; i < N; i++) {
-				if (arr[i] % 2 == 0 && arr[i + 2] % 2 == 0 || arr[i] % 2 == 1 && arr[i] % 2 == 1) {
-					cnt = -1;
-					break;
-				}
+				
 
 				// 짝수일때
 				if (arr[i] % 2 == 0) {
